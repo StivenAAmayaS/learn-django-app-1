@@ -1,0 +1,17 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+
+<h1>Projects</h1>
+
+<a href="{% url 'create_project' %}">Crear nuevo proyecto</a>
+
+<ul>
+    {% for project in projects %}
+    
+    <li>{{ project.name }}</li>
+    
+    {% endfor %}
+</ul>
+
+{% endblock %}

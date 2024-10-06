@@ -1,0 +1,19 @@
+# .gitignore
+
+# Entornos virtuales
+venv/
+*.pyc
+__pycache__/
+db.sqlite3
+.env
+
+# Archivos de configuración específicos
+.DS_Store
+*.log
+*.pot
+*.py[cod]
+*.sqlite3
+
+# Static y media
+staticfiles/
+media/

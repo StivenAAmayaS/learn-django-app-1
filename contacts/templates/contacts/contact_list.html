@@ -1,0 +1,21 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}Contacts{% endblock %}
+
+{% block extra_head %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'contacts/styles.css' %}">
+{% endblock %}
+
+{% block content %}
+<h1 class="contacts_top">Contact List</h1>
+
+<ul>
+    {% for contact in contacts %}
+        <li><a href="{% url 'contact_detail' contact.pk %}">{{ contact.first_name }} {{ contact.last_name }}</a></li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'contact_create' %}">Add new Contact</a>
+
+{% endblock %}
