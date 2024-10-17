@@ -1,3 +1,7 @@
+:root {
+    color-scheme: dark;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,5 +9,127 @@
 }
 
 body {
-    /* background-color: black; */
+    width: 100vw;
+    height: 100vh;
+    background-color: #021732;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    width: 100%;
+}
+
+.navbar {
+    width: 100%;
+    padding: 1.4rem 2.8rem;
+    background-color: #053E89;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    font-size: 1.3rem;
+}
+
+.navbar-toggler {
+    background-color: transparent;
+    border: 2px solid transparent;
+    border-radius: 0.4rem;
+    display: none;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.4rem;
+    width: min-content;
+    height: min-content;
+}
+
+.navbar-toggler:hover {
+    border-color: white;
+}
+
+.navbar-toggler:active {
+    border-color: red;
+}
+
+.navbar-toggler:active .bar {
+    background-color: red;
+}
+
+.bar {
+    width: 1rem;
+    height: 0.2rem;
+    background-color: white;
+    border-radius: 2px;
+}
+
+.navbar-nav {
+    /* background-color: #1E3E; */
+    display: flex;
+    gap: 1rem;
+}
+
+.navbar-nav li a {
+    padding: 0.4rem 1rem;
+    /* color: #F5EFFF; */
+    color: #EAE4DD;
+    /* background-color: #89123a; */
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-nav li.active a {
+    background-color: #007BFF;
+    color: #fff1f1;
+}
+
+.navbar-auth {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.navbar-auth .btn {
+    display: flex;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.navbar-auth .btn a {
+    padding: 0.3rem 0.8rem ;
+}
+
+main {
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    padding: 1rem 0.4rem;
+    position: relative;
+}
+
+/* @media (prefers-color-scheme: dark) {
+    body {
+        background-color: #4554;
+    }
+} */
+
+@media (max-width: 750px){
+    .navbar-toggler {
+        display: flex;
+    }
+
+    .navbar-nav {
+        display: none;
+    }
+
+    .navbar-auth {
+        /* display: none; */
+    }
 }

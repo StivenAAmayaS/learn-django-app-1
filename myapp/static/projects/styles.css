@@ -1,0 +1,254 @@
+
+
+.top-projects {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+hr {
+    margin: 0.4rem 0 0.6rem 0
+}
+
+
+/* Projects */
+
+.projects-container {
+    display: flex;
+    /* gap: 1rem; */
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.project-card {
+    background-color: #ece0e0;
+    color: black;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    min-width: 300px;
+    position: relative;
+}
+
+.project-card::before {
+    content: "";
+    width: 100%;
+    height: 10px;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: red;
+}
+
+.project-card:hover {
+    transform: scale(1.06);
+    z-index: 10;
+}
+
+
+.state-tasks {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    /* justify-content: end; */
+    margin: 10px 0;
+}
+
+.state-tasks p {
+
+}
+
+/* Details project */
+
+.overlay-blur {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(8px); 
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 1; 
+}
+
+/* .icon-create-tk {
+    position: fixed;
+    right: 10%;
+    bottom: 10%;
+    z-index: 10;
+    padding: 20px;
+    border-radius: 50%;
+} */
+
+.container-dts-pr {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    position: relative;
+}
+
+.container-pr {
+    flex: 2;
+    min-width: 300px;
+    /* background-color: #142612; */
+}
+
+.form-create-task {
+    flex: 1;
+    min-width: 250px;
+    width: fit-content;
+    background-color: #758292;
+    padding: 10px;
+    align-items: center;
+}
+
+.form-create-task form {
+    width: 100%;
+}
+
+.header-pr {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-pr .bs-pr {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.header-pr .bs-pr a {
+    display: flex;
+    justify-content: center;
+    font-size: 1.6rem;
+}
+
+/* .bs-pr h1 .edit, .bs-pr p .edit {
+    font-size: 14px;
+    display: none;
+    background-color: red;
+} */
+
+/* .bs-pr h1:hover .edit, .bs-pr p:hover .edit {
+    cursor: pointer;
+    display: inline;
+} */
+
+.edit-pr {
+    display: flex;
+    gap: 15px;
+}
+
+.edit-pr .i-create-tk {
+    display: none;
+}
+
+.edit-pr a {
+    padding: 10px;
+}
+
+.action-ts {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 6px 12px 6px;
+}
+
+#filter-tasks-form {
+    display: flex;
+    gap: 18px;
+}
+
+.btn-create-tk {
+    display: none;
+}
+
+.container-ts {
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 0 10px;    
+    width: 100%;
+    max-height: 400px;
+}
+
+.card-tk {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    background-color: #2C3135;
+    padding: 10px 18px;
+    border-radius: 15px;
+    align-items: center;
+    width: 100%;
+    /* min-width: 400px; */
+    /* flex-wrap: wrap; */
+    color: #fff;
+}
+
+.card-tk:hover {
+    transform: scale(1.01);
+    background-color: #364251;
+}
+
+.truncate-text-tk {
+    width: 100%;
+    max-height: 3em;
+    overflow: hidden;
+    /* display: -webkit-box; */
+    --webkit-line-clamp: 3;
+    --webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+}
+
+.title-tk,
+.desc-tk {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.edit-tk {
+    display: flex;
+    gap: 12px;
+}
+
+.msg-ts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.msg-ts .btn-create-tk {
+    width: max-content;
+    border-radius: 6px;
+    padding: 6px 16px;
+    background-color: #125D98;
+}
+
+@media (max-width: 750px) {
+    .edit-pr .btn-create-tk {
+        display: inline;
+    }
+
+    .form-create-task {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        height: fit-content;
+        z-index: 2;
+    }
+
+}

@@ -1,17 +1,48 @@
 {% extends 'layouts/base.html' %}
 
+{% block title %}Proyectos{% endblock %}
+
+{% block extra_head %}
+  {% load static %} 
+  <link rel="stylesheet" href="{% static 'projects/styles.css' %}">
+{% endblock %}
+
 {% block content %}
 
-<h1>Projects</h1>
+<div class="page-projects">
 
-<a href="{% url 'create_project' %}">Crear nuevo proyecto</a>
+    <div class="top-projects">
+        <h1 class="h-projects">Proyectos</h1>
+        <a href="{% url 'create_project' %}">Crear nuevo proyecto</a>
+    </div>
 
-<ul>
-    {% for project in projects %}
+    <hr>        
     
-    <li>{{ project.name }}</li>
-    
-    {% endfor %}
-</ul>
+    <div class="projects-container">
+        {% for project in projects %}
+
+        <a class="project-card" href="{% url 'project_detail' project.pk %}">
+            <div>
+                <h3>{{ project.name }}</h3>
+                <div class="state-tasks">
+                    <p title="Total de tareas">🟦 {{ project.total_tasks }}</p>
+                    <p title="Tareas completadas">🟩 {{ project.completed_tasks }}</p>
+                    <p title="Tareas pendientes">🟥 {{ project.pending_tasks }}</p>
+                </div>
+                
+            </div>
+
+            {% if project.description %}
+                <p>{{ project.description }}</p>        
+            {% else %}
+                <p>- Sin descripción -</p>
+            {% endif %}                
+        </a>
+
+        {% empty %}
+            <p>Todavia no tienes proyectos.</p>        
+        {% endfor %}
+    </div>
+</div>
 
 {% endblock %}

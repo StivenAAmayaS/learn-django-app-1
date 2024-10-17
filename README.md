@@ -1,3 +1,9 @@
+<header style="display: flex; flex-direction: column; justify-content: center; background: #341256;">
+    <h1 style="text-decoration: underline;">Hello world</h1>
+    <button><a href="https://github.com/StivenAAmayaS/learn-django-app-1" style="padding: 8px 18px;">Home</a></button>
+</header>
+
+
 # App Django
 
 Esta es una simple aplicación hecha con Django. Este proyecto fue creado como parte de mi aprendizaje con Django y como muestra de mi comprensión del desarrollo web utilizando este framework.
